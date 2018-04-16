@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 13-Abr-2018 às 21:03
+-- Generation Time: 16-Abr-2018 às 21:23
 -- Versão do servidor: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -42,7 +42,9 @@ CREATE TABLE `consultas` (
 --
 
 INSERT INTO `consultas` (`id_consulta`, `id_medico`, `id_paciente`, `compareceu`, `queixas_paciente`, `consideracoes_medico`, `hora_consulta`, `dt_consulta`) VALUES
-(1, 1, 1, 'S', 'Sfsd few', 'dsf wearwrwerwer', '14:00:00', '2018-04-12');
+(1, 1, 1, 'N', 'Sfsd few', 'dsf wearwrwerwer', '14:00:00', '2018-04-12'),
+(2, 1, 1, 'S', 'Sfsd feer werw', 'ewr ewrwer', '15:00:00', '2018-04-14'),
+(3, 2, 2, 'S', 'Wrew rewre', 'Sf ewroiewhriewhre', '16:30:00', '2018-04-15');
 
 -- --------------------------------------------------------
 
@@ -69,7 +71,8 @@ CREATE TABLE `medicos` (
 --
 
 INSERT INTO `medicos` (`id_medico`, `me_nome`, `me_email`, `me_fone`, `me_endereco`, `me_descricao`, `me_especialidades`, `me_valor`, `me_dt_cadastro`, `me_dt_ultimo_acesso`, `me_status`) VALUES
-(1, 'Dr João da Silva', 'joaodasilva@gmail.com', '53981182020', 'Rua das ruas', 'Al hsaihewpr', 'ASssa', '150.00', '2018-04-12', '2018-04-12', 'A');
+(1, 'Dr João da Silva', 'joaodasilva@gmail.com', '(53) 981182020', 'Rua das Ruas', 'Al hsaihewpr', 'ASssa', '150.00', '2018-04-12', '2018-04-12', 'A'),
+(2, 'Dr Julian Costa', 'juliancosta@gmail.com', '(53) 981181415', 'Rua das Sombras', 'SA dif odshfwefwer ewe', 'Nenhuma', '175.00', '2018-04-13', '2018-04-12', 'A');
 
 -- --------------------------------------------------------
 
@@ -91,7 +94,8 @@ CREATE TABLE `pacientes` (
 --
 
 INSERT INTO `pacientes` (`id_paciente`, `pc_nome`, `pc_email`, `pc_fone`, `pc_dt_cadastro`, `pc_dt_ultimo_acesso`) VALUES
-(1, 'Joãzinho', 'joaozinho@teste.com', '53981182021', '2018-04-12', '2018-04-12');
+(1, 'Joãzinho', 'joaozinho@teste.com', '(53) 981182021', '2018-04-12', '2018-04-12'),
+(2, 'Zezinho', 'zezinho@teste.com', '(53) 981183130', '2018-04-14', '2018-04-14');
 
 --
 -- Indexes for dumped tables
@@ -123,17 +127,17 @@ ALTER TABLE `pacientes`
 -- AUTO_INCREMENT for table `consultas`
 --
 ALTER TABLE `consultas`
-  MODIFY `id_consulta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_consulta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `medicos`
 --
 ALTER TABLE `medicos`
-  MODIFY `id_medico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_medico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `pacientes`
 --
 ALTER TABLE `pacientes`
-  MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
