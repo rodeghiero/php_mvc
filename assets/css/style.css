@@ -237,10 +237,12 @@ h1 {
 .btn {
 	color: #fff;
     border: none;
-	padding: 6px 10px;
-	background: #3b8bba;
-	display: inline-block;
-	text-decoration: none;
+    cursor: pointer;
+    padding: 6px 10px;
+    background: #3b8bba;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 21px;
 }
 .btn:hover {
 	background: #4b748c;
@@ -290,36 +292,73 @@ h1 {
     cursor: pointer;
     padding: 8px 10px;
 }
-.insertItem ul {
+
+
+.lst-tp1 {
     margin: 0;
     padding: 0;
     list-style: none;
 }
-.insertItem ul li {
+.lst-tp1 li {
     float: left;
+    padding: 5px 0;
     margin-right: 20px;
 }
-.insertItem ul li input {
+.lst-tp1 li input {
     width: 100%;
     padding: 6px 8px;
     margin-right: 10px;
 }
-.insertItem ul li select {
+.lst-tp1 li select {
     width: 100%;
     padding: 6px 8px;
     margin-right: 10px;
 }
-.insertItem ul li.large {
+.lst-tp1 li.large {
     max-width: 50%;
     min-width: 300px;
 }
-.insertItem ul li.small {
+.lst-tp1 li.small {
     max-width: 120px;
 }
 
 
 .tablePanel {
 	overflow-x: auto;
+}
+
+
+
+.contentEdit {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    display: table;
+    position: fixed;
+    background: rgba(10, 10, 10, 0.5);
+}
+.contentEdit .closeEdit {
+    top: 0;
+    right: 0;
+    color: #000;
+    background: #fff;
+    position: absolute;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+.contentEdit .centerItem {
+    margin: 0 auto;
+    display: table-cell;
+    vertical-align: middle;
+}
+.contentEdit .centerItem form {
+    margin: 0 auto;
+    min-width: 300px;
+    max-width: 920px;
+    background: #fff;
+    padding: 20px 30px;
 }
 
 

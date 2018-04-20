@@ -68,6 +68,18 @@ class ConsultasController extends MainController
 
 
     /*
+     * Edita uma consulta existente
+     */
+    public function edit() {
+        $consultas = $this->load_model('consultas-model');
+        $consultas->edit_consulta();
+
+        // Faz o reload para a tela que lista a agenda
+        header('Location: ' . HOME_URI . '/consultas');
+    }
+
+
+    /*
      * Remove uma consulta existente
      */
     public function remove() {

@@ -81,6 +81,22 @@ class ConsultasModel extends MainModel
 
 
 	/**
+	 * Edita uma Consulta existente
+	 */
+	public function edit_consulta () {
+		// Insere os dados
+		$query = $this->db->query(
+			'UPDATE consultas
+			SET id_medico = ' . $_POST["medico"] . ', id_paciente = ' . $_POST["paciente"] . ', hora_consulta = "' . $_POST["hora"] . '", dt_consulta = "' . $this->inverte_data($_POST["data"]) . '"
+			WHERE id_consulta = ' . $_POST['consultaId']
+		);
+
+		// Retorna
+		return;
+	}
+
+
+	/**
 	 * Remover Consulta existente
 	 */
 	public function remove_consulta () {

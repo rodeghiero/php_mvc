@@ -35,6 +35,22 @@ class MainModel
 
 
 	/**
+	 * Converte formato de Valores para USA
+	 */
+	public function valorToUsa( $valor = null ) {
+		$novo_valor = null;
+
+		if ( $valor ) {
+			$valor = explode(',', $valor);
+			$novo_valor .= $valor[0] . '.' . $valor[1];
+		}
+
+		// Retorna o novo valor
+		return $novo_valor;
+	}
+
+
+	/**
 	 * Filtra hora
 	 * Obtém a hora e remove o valor de segundos
 	 */

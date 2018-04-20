@@ -1,8 +1,20 @@
 
 $(function() {
+    $('.contentEdit').hide();
 
-    $(".maskDate").mask("99/99/9999");
-    $(".maskHour").mask("99:99");
+
+    $('.maskDate').mask('99/99/9999');
+    $('.maskHour').mask('99:99');
+    $('.maskFone').mask('(99)-9999-99999');
+
+    $(".editItem").click(function(){
+        $(this).next('.contentEdit').show();
+    });
+
+    $(".closeEdit").click(function(){
+        $('.contentEdit').hide();
+    });
+
 
     $('#filtrar').click(function(e){
         e.preventDefault();
