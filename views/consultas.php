@@ -31,6 +31,7 @@
 						<th>Paciente</th>
 						<th>Médico</th>
 						<th>Compareceu?</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody class="items">
@@ -43,12 +44,55 @@
 							<td><?php echo $consulta['pc_nome']; ?></td>
 							<td><?php echo $consulta['me_nome']; ?></td>
 							<td><?php if($consulta['compareceu'] == 'S') { echo "Sim"; } else { echo "Não"; } ?></td>
+							<td><a href="<?php echo HOME_URI;?>/consultas/remove?itm=<?php echo $consulta['id_consulta']; ?>">Remover</a></td>
 						</tr>
 						<?php
 					}
 				?>
 				</tbody>
 			</table>
+		</div>
+
+
+		<div class="insertItem mgLR20">
+			<form action="<?php echo HOME_URI;?>/consultas/add" method="POST">
+				<strong>Inserir nova consulta</strong>
+				<ul class="clearfix">
+					<li class="large">
+						<select name="paciente" id="paciente">
+							<option value="">selecione</option>
+							<?php
+								foreach ($listaPacientes as $paciente) {
+								?>
+									<option value="<?php echo $paciente['id_paciente']; ?>"><?php echo $paciente['pc_nome']; ?></option>
+								<?php
+								}
+							?>
+						</select>
+					</li>
+					<li class="large">
+						<select name="medico" id="medico">
+							<option value="">selecione</option>
+							<?php
+								foreach ($listaMedicos as $medico) {
+								?>
+									<option value="<?php echo $medico['id_medico']; ?>"><?php echo $medico['me_nome']; ?></option>
+								<?php
+								}
+							?>
+						</select>
+					</li>
+					<li class="small">
+						<input type="text" class="small maskDate" name="data" id="data">
+					</li>
+					<li class="small">
+						<input type="text" class="small maskHour" name="hora" id="hora">
+					</li>
+					<li>
+						<input class="btn" type="submit" value="Marcar consulta">
+					</li>
+				</ul>
+			</form>
 		</div>
 
 	</div>

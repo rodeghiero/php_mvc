@@ -196,6 +196,7 @@ h1 {
 }
 
 
+
 .tbl-tp1 {
 	width: 100%;
 }
@@ -218,28 +219,30 @@ h1 {
 }
 
 
-
-.bxFiltro {
-	padding: 10px 20px;
-	background: #f1f2f5;
-	margin: 0 22px 5px 22px;
-	border-bottom: 2px solid #e2e4ea;
-}
-.bxFiltro .form {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-.bxFiltro .form .btn {
+.btn {
 	color: #fff;
+    border: none;
 	padding: 6px 10px;
 	background: #3b8bba;
 	display: inline-block;
 	text-decoration: none;
 }
-.bxFiltro .form .btn:hover {
+.btn:hover {
 	background: #4b748c;
 	transition: 0.4s all;
+}
+
+
+.bxFiltro {
+    padding: 10px 20px;
+    background: #f1f2f5;
+    margin: 0 22px 5px 22px;
+    border-bottom: 2px solid #e2e4ea;
+}
+.bxFiltro .form {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 .bxFiltro .form p {
     font-weight: 700;
@@ -261,6 +264,43 @@ h1 {
 	max-width: 120px;
 }
 
+
+.insertItem {
+    padding: 20px;
+    background: #f1f2f5;
+    margin-top: 20px !important;
+    border-top: 2px solid #e2e4ea;
+}
+.insertItem .btn {
+    cursor: pointer;
+    padding: 8px 10px;
+}
+.insertItem ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.insertItem ul li {
+    float: left;
+    margin-right: 20px;
+}
+.insertItem ul li input {
+    width: 100%;
+    padding: 6px 8px;
+    margin-right: 10px;
+}
+.insertItem ul li select {
+    width: 100%;
+    padding: 6px 8px;
+    margin-right: 10px;
+}
+.insertItem ul li.large {
+    max-width: 50%;
+    min-width: 300px;
+}
+.insertItem ul li.small {
+    max-width: 120px;
+}
 
 
 .tablePanel {

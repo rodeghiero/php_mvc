@@ -2,6 +2,7 @@
 $(function() {
 
     $(".maskDate").mask("99/99/9999");
+    $(".maskHour").mask("99:99");
 
     $('#filtrar').click(function(e){
         e.preventDefault();

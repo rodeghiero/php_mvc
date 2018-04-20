@@ -12,7 +12,9 @@ class ConsultasController extends MainController
 		$this->templatePage = 'consultas';
 
 		$consultas = $this->load_model('consultas-model');
-		$listaConsultas = $consultas->listar_consultas();
+        $listaConsultas = $consultas->listar_consultas();
+        $listaPacientes = $consultas->listar_pacientes();
+		$listaMedicos = $consultas->listar_medicos();
 		
 		// carrega o template master dos sistema........
         require ABSPATH . '/views/master.php';
@@ -20,6 +22,9 @@ class ConsultasController extends MainController
     }
 
 
+    /*
+     * Executa o filtro dos itens na tela por AJAX
+     */
     public function filtro() {
         if ($_POST) {
 			$consultas = $this->load_model('consultas-model');
@@ -43,6 +48,30 @@ class ConsultasController extends MainController
             $message = 'Este envio não é um Post do sistema!';
             echo "{ \"status\" : \"".$status."\", \"message\" : \"".$message."\" }";
         }
+    }
+
+
+    /*
+     * Adiciona uma nova consulta
+     */
+    public function add() {
+        $consultas = $this->load_model('consultas-model');
+        $consultas->add_consulta();
+
+        // Faz o reload para a tela que lista a agenda
+        header('Location: ' . HOME_URI . '/consultas');
+    }
+
+
+    /*
+     * Remove uma consulta existente
+     */
+    public function remove() {
+        $consultas = $this->load_model('consultas-model');
+        $consultas->remove_consulta();
+
+        // Faz o reload para a tela que lista a agenda
+        header('Location: ' . HOME_URI . '/consultas');
     }
 
 }
