@@ -6,9 +6,6 @@
 // Caminho para a raiz
 define( 'ABSPATH', dirname( __FILE__ ) );
 
-// Caminho para a pasta de uploads
-define( 'UP_ABSPATH', ABSPATH . '/views/_uploads' );
-
 // URL da home
 define( 'HOME_URI', 'http://localhost/php_mvc' );
 

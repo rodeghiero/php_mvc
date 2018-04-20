@@ -11,10 +11,14 @@ class ConsultasController extends MainController
 		$this->title = 'Consultas';
 		$this->templatePage = 'consultas';
 
-		$consultas = $this->load_model('consultas-model');
+        $consultas = $this->load_model('consultas-model');
         $listaConsultas = $consultas->listar_consultas();
-        $listaPacientes = $consultas->listar_pacientes();
-		$listaMedicos = $consultas->listar_medicos();
+
+        $medicos = $this->load_model('medicos-model');
+        $listaMedicos = $medicos->listar_medicos();
+
+		$pacientes = $this->load_model('pacientes-model');
+        $listaPacientes = $pacientes->listar_pacientes();
 		
 		// carrega o template master dos sistema........
         require ABSPATH . '/views/master.php';

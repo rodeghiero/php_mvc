@@ -1,6 +1,6 @@
 <?php
 /**
- * Este arquivo não faz nada, apenas inclui os arquivos necessários
+ * Este arquivo, apenas inclui os arquivos necessários para a inicialização
  */
  
 // Config

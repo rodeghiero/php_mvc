@@ -1,11 +1,6 @@
 <?php
 /**
  * MainModel - Modelo geral
- *
- * 
- *
- * @package TutsupMVC
- * @since 0.1
  */
 class MainModel
 {
@@ -24,7 +19,7 @@ class MainModel
 
 
 	/**
-	 * Converte formato de Valores..............
+	 * Converte formato de Valores para BRASIL
 	 */
 	public function valorToBr( $valor = null ) {
 		$novo_valor = null;
@@ -58,6 +53,7 @@ class MainModel
 		// Retorna a nova data
 		return $nova_hora;
 	}
+
 
 	/**
 	 * Inverte datas 

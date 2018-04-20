@@ -9,14 +9,14 @@ class ConsultasModel extends MainModel
 	public function __construct( $db = false, $controller = null ) {
 		// Configura o DB (PDO)
 		$this->db = $db;
-		
+
 		// Configura o controlador
 		$this->controller = $controller;
 	}
 
 
 	/**
-	 * Listar consultas
+	 * Listar consultas geral
 	 */
 	public function listar_consultas () {
 		// Faz a consulta
@@ -40,6 +40,16 @@ class ConsultasModel extends MainModel
 		$nome = $_POST["nome"];
 		$dtInit = str_replace('/', '-', $this->inverte_data($_POST["data_init"]));
 		$dtEnd = str_replace('/', '-', $this->inverte_data($_POST["data_end"]));
+
+		// Se as datas forem nulas, cria um intervalo de datas para busca completa.
+		if(empty($dtInit)) {
+			$dtInit = '1900-01-01';
+		}
+		if(empty($dtEnd)) {
+			$dtEnd = '2100-12-31';
+		}
+
+		// Busca os dados no BD conforme os filtros
 		$query = $this->db->query(
 			'SELECT * FROM consultas
 			INNER JOIN medicos ON medicos.id_medico = consultas.id_medico
@@ -56,7 +66,7 @@ class ConsultasModel extends MainModel
 
 
 	/**
-	 * Adicionar Consulta
+	 * Adicionar nova Consulta
 	 */
 	public function add_consulta () {
 		// Insere os dados
@@ -71,7 +81,7 @@ class ConsultasModel extends MainModel
 
 
 	/**
-	 * Remover Consulta
+	 * Remover Consulta existente
 	 */
 	public function remove_consulta () {
         $query = $this->db->query(
@@ -82,33 +92,5 @@ class ConsultasModel extends MainModel
 		// Retorna
 		return;
     }
-
-
-	/**
-	 * Listar medicos
-	 */
-	public function listar_medicos () {
-		// Faz a consulta de todos os médicos
-		$query = $this->db->query(
-			'SELECT * FROM medicos'
-		);
-
-		// Retorna
-		return $query->fetchAll();
-	}
-
-
-	/**
-	 * Listar pacientes
-	 */
-	public function listar_pacientes () {
-		// Faz a consulta de todos os pacientes
-		$query = $this->db->query(
-			'SELECT * FROM pacientes'
-		);
-
-		// Retorna
-		return $query->fetchAll();
-	}
 
 }
